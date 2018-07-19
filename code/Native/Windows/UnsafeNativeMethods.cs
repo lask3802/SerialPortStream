@@ -49,7 +49,7 @@ namespace RJCP.IO.Ports.Native.Windows
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool GetCommModemStatus(SafeFileHandle hFile,
-            [MarshalAs(UnmanagedType.U4)] out NativeMethods.ModemStat lpModemStat);
+            out NativeMethods.ModemStat lpModemStat);
 
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -64,7 +64,7 @@ namespace RJCP.IO.Ports.Native.Windows
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool WaitCommEvent(SafeFileHandle hFile,
-            [MarshalAs(UnmanagedType.U4)] out NativeMethods.SerialEventMask lpEvtMask,
+            out NativeMethods.SerialEventMask lpEvtMask,
             ref System.Threading.NativeOverlapped lpOverlapped);
 
         [DllImport("kernel32.dll", SetLastError = true)]
@@ -81,7 +81,7 @@ namespace RJCP.IO.Ports.Native.Windows
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool ClearCommError(
             [In] SafeFileHandle hFile,
-            [MarshalAs(UnmanagedType.U4)] out NativeMethods.ComStatErrors lpErrors,
+            out NativeMethods.ComStatErrors lpErrors,
             [Out] out NativeMethods.COMSTAT lpStat
         );
 
@@ -89,7 +89,7 @@ namespace RJCP.IO.Ports.Native.Windows
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool ClearCommError(
             [In] SafeFileHandle hFile,
-            [MarshalAs(UnmanagedType.U4)] out NativeMethods.ComStatErrors lpErrors,
+            out NativeMethods.ComStatErrors lpErrors,
             IntPtr lpStat
         );
 
