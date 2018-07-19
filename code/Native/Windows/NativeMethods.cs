@@ -11,7 +11,7 @@ namespace RJCP.IO.Ports.Native.Windows
     internal static class NativeMethods
     {
         [Flags]
-        public enum DcbFlags
+        public enum DcbFlags : uint
         {
             Binary = 0x0001,
             Parity = 0x0002,
@@ -119,7 +119,7 @@ namespace RJCP.IO.Ports.Native.Windows
         }
 
         [Flags]
-        public enum FileAccess
+        public enum FileAccess:uint
         {
             #region Standard Access Rights
             /// <summary>
@@ -214,7 +214,7 @@ namespace RJCP.IO.Ports.Native.Windows
             /// <summary>
             /// Read access
             /// </summary>
-            GENERIC_READ = unchecked((int)0x80000000),
+            GENERIC_READ = unchecked((uint)0x80000000),
             #endregion
 
             #region Specific Rights File, Pipe and Directory
@@ -345,7 +345,7 @@ namespace RJCP.IO.Ports.Native.Windows
         }
 
         [Flags]
-        public enum FileShare
+        public enum FileShare : uint
         {
             /// <summary>
             /// Prevents other processes from opening a file or device if they request to delete,
@@ -384,7 +384,7 @@ namespace RJCP.IO.Ports.Native.Windows
             FILE_SHARE_DELETE = 0x00000004
         }
 
-        public enum CreationDisposition
+        public enum CreationDisposition : uint
         {
             /// <summary>
             /// Creates a new file. The function fails if a specified file exists.
@@ -423,7 +423,7 @@ namespace RJCP.IO.Ports.Native.Windows
         }
 
         [Flags]
-        public enum FileAttributes
+        public enum FileAttributes : uint
         {
             /// <summary>
             /// A file that is read-only
@@ -653,13 +653,13 @@ namespace RJCP.IO.Ports.Native.Windows
             /// <remarks>
             /// For additional information, see the Caching Behaviour section of CreateFile().
             /// </remarks>
-            FILE_FLAG_WRITE_THROUGH = unchecked((int)0x80000000),
+            FILE_FLAG_WRITE_THROUGH = unchecked((uint)0x80000000),
         }
 
         /// <summary>
         /// The file type of the specified file
         /// </summary>
-        public enum FileType
+        public enum FileType : uint
         {
             /// <summary>
             /// Either the type of the specified file is unknown, or the function failed
@@ -691,7 +691,7 @@ namespace RJCP.IO.Ports.Native.Windows
         /// Specifies possible baud rates in the GetCommProperties method
         /// </summary>
         [Flags]
-        public enum MaxBaud
+        public enum MaxBaud : uint
         {
             /// <summary>
             /// 75 bps
@@ -797,7 +797,7 @@ namespace RJCP.IO.Ports.Native.Windows
         /// <summary>
         /// Communications Provider Type
         /// </summary>
-        public enum ProvSubType
+        public enum ProvSubType:uint
         {
             /// <summary>
             /// Unspecified
@@ -869,7 +869,7 @@ namespace RJCP.IO.Ports.Native.Windows
         /// Bit mask of capabilities in the GetCommProperties method
         /// </summary>
         [Flags]
-        public enum ProvCapabilities
+        public enum ProvCapabilities:uint
         {
             /// <summary>
             /// DTR (data-terminal-ready)/DSR (data-set-ready) supported
@@ -926,7 +926,7 @@ namespace RJCP.IO.Ports.Native.Windows
         /// Communication parameters that can be changed
         /// </summary>
         [Flags]
-        public enum SettableParams
+        public enum SettableParams:uint
         {
             /// <summary>
             /// Parity
@@ -968,7 +968,7 @@ namespace RJCP.IO.Ports.Native.Windows
         /// Number of data bits that can be set
         /// </summary>
         [Flags]
-        public enum SettableData
+        public enum SettableData:uint
         {
             /// <summary>
             /// 5 data bits
@@ -1005,7 +1005,7 @@ namespace RJCP.IO.Ports.Native.Windows
         /// The stop bit and parity settings
         /// </summary>
         [Flags]
-        public enum SettableStopParity
+        public enum SettableStopParity:uint
         {
             /// <summary>
             /// 1 stop bit
@@ -1173,7 +1173,7 @@ namespace RJCP.IO.Ports.Native.Windows
         /// Current state of the modem control-register values
         /// </summary>
         [Flags]
-        public enum ModemStat
+        public enum ModemStat :uint
         {
             /// <summary>
             /// The CTS (clear-to-send) signal is on
@@ -1248,7 +1248,7 @@ namespace RJCP.IO.Ports.Native.Windows
         }
 
         [Flags]
-        public enum SerialEventMask
+        public enum SerialEventMask:uint
         {
             /// <summary>
             /// A character was received and placed in the input buffer
@@ -1329,7 +1329,7 @@ namespace RJCP.IO.Ports.Native.Windows
         }
 
         [Flags]
-        public enum ComStatErrors
+        public enum ComStatErrors:uint
         {
             CE_RXOVER = 0x0001,
             CE_OVERRUN = 0x0002,
@@ -1345,7 +1345,7 @@ namespace RJCP.IO.Ports.Native.Windows
         }
 
         [Flags]
-        public enum ComStatFlags
+        public enum ComStatFlags:uint
         {
             CtsHold = 0x01,
             DsrHold = 0x02,
@@ -1366,7 +1366,7 @@ namespace RJCP.IO.Ports.Native.Windows
         }
 
         [Flags]
-        public enum PurgeFlags
+        public enum PurgeFlags:uint
         {
             PURGE_TXABORT = 0x0001,
             PURGE_RXABORT = 0x0002,
